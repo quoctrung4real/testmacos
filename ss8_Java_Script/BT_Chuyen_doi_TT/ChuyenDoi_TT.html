@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <th>Amount </th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+        </tr>
+        <tr>
+            <td><input name="NhapVao" id="nhapvao"</td>
+            <td><select type="text" id="TuGiaTri">
+                <option>VietNam</option>
+                <option>USD</option>
+            </select> </td>
+            <td>
+                <select name="ChuyenDoiTu" id="QuaGiaTri">
+                    <option>USD</option>
+                    <option>VietNam</option>
+                </select>
+            </td>
+            <td ><button type="button" onclick="checkID()" >Convert</button></td>
+        </tr>
+        <tr>
+            <td><h1 id="f"></h1></td>
+        </tr>
+    </table>
+</form>
+<script src="ChuyenDoi_TT.js"></script>
+</body>
+</html>
