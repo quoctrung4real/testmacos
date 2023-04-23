@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = +prompt("Nhap vao canh A");
+    let b = +prompt("Nhap vao canh B");
+    let c = +prompt("Nhap vao canh C");
+    let DK_1 = a + b;
+    let DK_2 = b + c;
+    let DK_3 = a + c;
+    let DK_4 = a + b + c
+    if (DK_4 < 0) {
+        document.write("A,B,C khong phai 3 canh cua 1 tam giac vi nho hon 0");
+    } else {
+        document.write("A,B,C la 3 canh cua 1 tam giac");
+    }
+    if (DK_1 > c) {
+        document.write("A,B,C la 3 canh cua 1 tam giac");
+    } else {
+        document.write("A,B,C khong phai 3 canh cua 1 tam giac");
+    }
+    if (DK_2 > a) {
+        document.write("A,B,C la 3 canh cua 1 tam giac");
+    } else {
+        document.write("A,B,C khong phai 3 canh cua 1 tam giac");
+    }
+    if (DK_3 > b) {
+        document.write("A,B,C la 3 canh cua 1 tam giac");
+    } else {
+        document.write("A,B,C khong phai 3 canh cua 1 tam giac");
+    }
+
+</script>
+</body>
+</html>

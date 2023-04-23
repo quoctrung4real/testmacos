@@ -5,6 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-
+<script>
+    let Tuoi = +prompt("Nhap vao so tuoi")
+    if(Number.isInteger(Tuoi)){
+        if(Tuoi<0 && Tuoi>120){
+            document.write("Tuoi phai lon hon 0 va nho hon 120")
+        }else {
+            document.write("Gia tri nhap vao la Tuoi cua 1 nguoi")
+        }
+    }else{
+        document.write("Gia tri nhap vao phai la so Nguyen")
+    }
+</script>
 </body>
 </html>
