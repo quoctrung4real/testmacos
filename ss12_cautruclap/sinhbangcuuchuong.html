@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let tablestring = '<table border = 1>'
+    for (i = 1; i <= 10; i++) {
+        tablestring += "<tr>"
+        for (j = 1; j <= 10; j++) {
+            tablestring += "<td>" + j + "x" + i + "=" + j * i;
+        }
+        tablestring +="</tr>"
+    }
+    document.writeln(tablestring);
+</script>
+</body>
+</html>
