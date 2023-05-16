@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arr = []
+  for (let i=0; i<10; i++) {
+    arr[i] = +prompt("Nhap vao so phan tu thu" + (i + 1 + "cua mang"))
+  }
+  let V = +prompt("Nhap vao gia tri V");
+  let index = arr.indexOf(V)
+  if (index === -1){
+    document.write("V khong thuoc mang da cho")
+  }else {
+    arr.splice(index,1);
+    arr.push(0)
+  }
+  document.write("V sau khi gan gia tri" + arr.join(", ") + "]");
+</script>
+</body>
+</html>
