@@ -5,17 +5,26 @@
     <title>Title</title>
 </head>
 <body>
+<form>
+    <input type="text" id="inputValue">
+    <button type="button" onclick="function1()">Check</button>
+    <input type="reset" id="resetValue">
+</form>
+<p id="result"></p>
 <script>
-    let a = prompt("Nhap vao nhiet do")
-    for (parseInt in a ){
-    if (a > 100) {
-        document.write("Yeu cau giam nhiet do")
-    } else if (a < 20) {
-        document.write("Yeu cau tang nhiet do")
-    } else {
-        document.writeln("Nhiet do cua ban khong can tang giam")
+    function function1() {
+        let a = parseInt(document.getElementById("inputValue").value);
+
+        for (i = 0; i < a; i++) {
+            if (a > 100) {
+                document.getElementById("result").innerText = ("Yeu cau giam nhiet do");
+            } else if (a < 20) {
+                document.getElementById("result").innerText = ("Yeu cau tang nhiet do");
+            } else {
+                document.getElementById("result").innerText = ("Nhiet do cua ban khong can tang giam");
+            }
+        }
     }
-}
 
 
 </script>
