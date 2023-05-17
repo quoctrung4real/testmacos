@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label for="inputValue">Nhap Vao SNT</label>
+<input type="text" name="inputValue" id="inputValue">
+<button type="button" name="inputButton" id="inputButton" onclick="checkSNT()">Check</button>
+<p id="result"></p>
+<script>
+    function checkSNT() {
+        let inputValue = parseInt(document.getElementById("inputValue").value);
+        if (inputValue < 2) {
+            document.getElementById("result").innerText = "So nhap vao khong phai so nguyen to";
+        } else {
+            for (let i = 2; i < inputValue; i++) {
+                if (inputValue % i === 0) {
+                    document.getElementById("result").innerText = "So nhap vao khong phai so nguyen to";
+                    break;
+                }
+
+            else
+            {
+                document.getElementById("result").innerText = "So nhap vao la so nguyen to";
+            }
+        }
+    }}
+</script>
+</body>
+</html>
