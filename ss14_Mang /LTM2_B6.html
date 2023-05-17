@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let arr = prompt("Nhap vao chuoi ky tu cach nhau boi dau cach").split(" ");
+  for(let i=0; i<arr.length; i++){
+    if (arr[i] === "-"){
+      arr[i] = "_";
+    }
+  }
+  document.write("Mang sau khi thay the: " + arr.join(" "));
+</script>
+</body>
+</html>
