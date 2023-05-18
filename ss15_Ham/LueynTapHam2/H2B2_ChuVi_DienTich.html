@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<label for="inputValue">Nhap vao ban kinh hinh tron</label>
+<input type="text" name="inputValue" id="inputValue"><br>
+
+<button value="inputButton" type="button" onclick="DienTich()">Tinh Dien Tich</button>
+<button value="inputButton" type="button" onclick="ChuVi()">Tinh Chu vi</button>
+<p id="result"></p>
+<body>
+<script>
+    // let BK = parseInt(document.getElementById("inputValue").value)
+    function DienTich(BK) {
+        BK = parseInt(document.getElementById("inputValue").value)
+        Result1 = (BK * BK) * 3.14;
+        document.getElementById("result").innerText = "Dien tich hinh tron la " + Result1;
+    }
+
+    function ChuVi(BK) {
+        BK = parseInt(document.getElementById("inputValue").value)
+        Result2 = (BK * 2) * 3.14;
+        document.getElementById("result").innerText = "Chu vi hinh tron la " + Result2;
+    }
+</script>
+</body>
+</html>

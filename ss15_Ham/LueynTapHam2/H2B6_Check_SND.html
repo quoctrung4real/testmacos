@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<label for="inputValue">Nhap vao so</label>
+<input type="text" id="inputValue">
+<button type="button" onclick="CheckSND()">Check</button>
+<p id="result"></p>
+<body>
+<script>
+  function CheckSND(){
+    let Num = parseInt(document.getElementById("inputValue").value);
+    if (Num > 0){
+      document.getElementById('result').innerText='True'
+    }else{
+      document.getElementById('result').innerText='False'
+    }
+  }
+</script>
+</body>
+</html>

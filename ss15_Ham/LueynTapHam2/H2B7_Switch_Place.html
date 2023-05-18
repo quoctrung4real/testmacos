@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<label for="inputValue1">Nhap vao so A</label>
+<input type="text" id="inputValue1"><br>
+<label for="inputValue2">Nhap vao so B</label>
+<input type="text" id="inputValue2"><br>
+<button type="button" onclick="SwapNum()">SWAP</button>
+<p id="result"></p>
+<body>
+<script>
+
+  function SwapNum(a, b){
+     a = document.getElementById('inputValue1').value;
+     b = document.getElementById('inputValue2').value;
+    let temp = a
+    a = b
+    b = temp
+
+    document.getElementById('result').innerText='Ket qua la sau khi doi cho la '+a+" "+b;
+  }
+
+</script>
+</body>
+</html>

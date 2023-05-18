@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<label for="inputValue">Nhap vao mang so nguyen</label>
+<input type="text" id="inputValue">
+<button type="button" id="inputButton" onclick="ReverseArr()">Reverse</button>
+<p id="result"></p>
+<body>
+<script>
+    function ReverseArr(){
+        let inputValue = document.getElementById("inputValue").value;
+        let toArray = inputValue.split("").map(Number);
+        let reverseArray = toArray.reverse();
+        document.getElementById('result').innerText ='Ket qua la '+reverseArray.join(", ");
+    }
+</script>
+</body>
+</html>

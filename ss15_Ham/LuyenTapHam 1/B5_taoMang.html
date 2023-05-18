@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let arr2 = ['UrsaMinor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'UrsaMajor', 'Leo'];
+
+    function FindStar(StarName) {
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i].toLowerCase() === StarName.toLowerCase()) {
+                return arr2[i];
+            }
+        }
+        return " khong tim thay chom sao tuong ung ";
+    }
+
+    let StarName = prompt("Nhap ten ngoi sao")
+    let Find = FindStar(StarName);
+    alert("Chom sao tuong ung voi ngoi sao " + StarName + " la " + Find);
+</script>
+</body>
+</html>
