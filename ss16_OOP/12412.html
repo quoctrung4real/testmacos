@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Điện thoại Nokia</h2>
+<input type="text" id="nokiaMessageInput" placeholder="Nhập tin nhắn Nokia" />
+<button id="nokiaComposeBtn">Soạn tin và gửi</button>
+<h3>Tin nhắn trong hộp thư đến của iPhone:</h3>
+<textarea id="iphoneInbox" rows="5" cols="30" readonly></textarea>
+
+<h2>Điện thoại iPhone</h2>
+<input type="text" id="iphoneMessageInput" placeholder="Nhập tin nhắn iPhone" />
+<button id="iphoneReceiveBtn">Kiểm tra hộp thư đến</button>
+<h3>Tin nhắn trong hộp thư đến của Nokia:</h3>
+<textarea id="nokiaInbox" rows="5" cols="30" readonly></textarea>
+
+<script>
+    class Mobile {
+        constructor() {
+            this.battery = 100;
+            this.isPowerOn = true;
+            this.draftMessage = '';
+            this.inbox = [];
+            this.sentMessages = [];
+        }
+
+        checkPowerStatus() {
+            return this.isPowerOn;
+        }
+
+        powerOn() {
+            if (!this.isPowerOn) {
+                this.isPowerOn = true;
+                console.log('Điện thoại đã được bật.');
+            } else {
+                console.log('Điện thoại đã được bật trước đó.');
+            }
+        }
+
+        powerOff() {
+            if (this.isPowerOn) {
+                this.isPowerOn = false;
+                console.log('Điện thoại đã được tắt.');
+            } else {
+                console.log('Điện thoại đã được tắt trước đó.');
+            }
+        }
+
+        chargeBattery() {
+            if (this.battery < 100) {
+                this.battery = 100;
+                console.log('Điện thoại đã được sạc đầy pin.');
+            } else {
+                console.log('Điện thoại đã được sạc đầy pin trước đó.');
+            }
+        }
+
+        composeMessage(message) {
+            if (this.isPowerOn) {
+                this.draftMessage = message;
+                this.battery--;
+                console.log('Đã soạn tin nhắn.');
+            } else {
+                console.log('Điện thoại chưa được bật.');
+            }
+        }
+
+        receiveMessage(message) {
+            if (this.isPowerOn) {
+                this.inbox.push(message);
+                this.battery--;
+                console.log('Đã nhận tin nhắn mới.');
+            } else {
+                console.log('Điện thoại chưa được bật.');
+            }
+        }
+
+        sendMessage(receiver, message) {
+            if (this.isPowerOn) {
+                receiver.receiveMessage(message);
+                this.sentMessages.push(message);
+                this.battery--;
+                console.log('Đã gửi tin nhắn.');
+            } else {
+                console.log('Điện thoại chưa được bật.');
+            }
+        }
+    }
+
+    const nokiaMobile = new Mobile();
+    const iphoneMobile = new Mobile();
+
+    const nokiaComposeBtn = document.getElementById('nokiaComposeBtn');
+    const nokiaMessageInput = document.getElementById('nokiaMessageInput');
+    const iphoneInbox = document.getElementById('iphoneInbox');
+
+    nokiaComposeBtn.addEventListener('click', function () {
+        const message = nokiaMessageInput.value;
+        nokiaMobile.composeMessage(message);
+        iphoneMobile.receiveMessage(message);
+        nokiaMessageInput.value = '';
+    });
+
+    const iphoneReceiveBtn = document.getElementById('iphoneReceiveBtn');
+    const iphoneMessageInput = document.getElementById('iphoneMessageInput');
+    const nokiaInbox = document.getElementById('nokiaInbox');
+
+    iphoneReceiveBtn.addEventListener('click', function () {
+        const message = iphoneMessageInput.value;
+        nokiaMobile.receiveMessage(message);
+        iphoneMessageInput.value = '';
+    });
+
+    Mobile.prototype.updateInbox = function (inboxElement) {
+        inboxElement.value = this.inbox.join('\n');
+    };
+
+    setInterval(function () {
+        nokiaMobile.updateInbox(nokiaInbox);
+        iphoneMobile.updateInbox(iphoneInbox);
+    }, 1000);
+</script>
+</body>
+</html>
