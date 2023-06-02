@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function CheckNguyenAm(character){
+        character = character.toLowerCase()
+        if(character === "o" ||
+            character === "u" ||
+            character === "i" ||
+            character === "a" ||
+            character === "e"
+        ){
+          alert("Ky tu " + character + " la mot nguyen am")
+        }else{
+            alert("Ky tu " + character + " la mot phu am")
+        }
+    }
+    let InputCharacter = prompt("Nhap vao ky tu can kiem tra")
+    CheckNguyenAm(InputCharacter);
+</script>
+</body>
+</html>
