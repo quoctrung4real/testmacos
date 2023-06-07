@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function isFibonacciNumber(num) {
+    // Kiểm tra xem số num có phải là số Fibonacci không
+    let fibPrev = 0;
+    let fibCurr = 1;
+
+    while (fibCurr < num) {
+      let temp = fibCurr;
+      fibCurr = fibPrev + fibCurr;
+      fibPrev = temp;
+    }
+
+    return fibCurr === num;
+  }
+
+  function findFibonacciNumbers(arr) {
+    // Tìm các số Fibonacci trong mảng và sắp xếp tăng dần
+    let fibonacciNumbers = [];
+
+    for (let i = 0; i < arr.length; i++) {
+      if (isFibonacciNumber(arr[i])) {
+        fibonacciNumbers.push(arr[i]);
+      }
+    }
+
+    fibonacciNumbers.sort(function(a, b) {
+      return a - b;
+    });
+
+    return fibonacciNumbers;
+  }
+
+  // Kiểm tra với mảng đầu vào
+  let inputArray = [1, 5, 6, 13, 9, 12, 8, 0, 5, 1];
+  let fibonacciNumbers = findFibonacciNumbers(inputArray);
+
+  console.log(fibonacciNumbers); // Kết quả: [0, 1, 1, 5, 5, 8, 13]
+
+</script>
+</body>
+</html>

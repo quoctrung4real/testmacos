@@ -6,7 +6,18 @@
 </head>
 <body>
 <script>
+ let Heigth = +prompt("Nhap vao chieu cao");
+ for(let i=1; i<=Heigth; i++){
+     for( let j=1; j<=Heigth; j++) {
+         if (i === j || j === 1 || i===Heigth) {
+             document.write("*");
+         } else {
+             document.write("&nbsp&nbsp");
+         }
+     }
+         document.write("<Br>");
 
+ }
 </script>
 </body>
 </html>

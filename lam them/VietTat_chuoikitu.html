@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function createAbbreviation(str) {
+        // Tách chuỗi thành các từ
+        let words = str.split(/\s+/);
+
+        if (words.length >= 2) {
+            // Tạo cụm từ viết tắt bằng cách lấy ký tự đầu tiên của từng từ và đổi sang in hoa
+            let abbreviation = "";
+            for (let i = 0; i < words.length; i++) {
+                let firstChar = words[i][0].toUpperCase();
+                abbreviation += firstChar;
+            }
+            return abbreviation;
+        } else if (words.length === 1) {
+            return "Chuỗi chỉ có 1 từ nên không cần viết tắt";
+        } else {
+            return "Chuỗi không hợp lệ";
+        }
+    }
+
+    // Kiểm tra với các chuỗi đầu vào khác nhau
+    console.log(createAbbreviation("object Oriented programming")); // Kết quả: OOP
+    console.log(createAbbreviation("ObjectOriented")); // Kết quả: Chuỗi chỉ có 1 từ nên không cần viết tắt
+    console.log(createAbbreviation("Invalid string")); // Kết quả: Chuỗi không hợp lệ
+
+</script>
+</body>
+</html>

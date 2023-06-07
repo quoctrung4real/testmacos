@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Danh sách máy tính</h2>
+<script>
+  class MayTinh {
+    constructor(maMay, tenMay, tenHangSanXuat, giaBan) {
+      this.maMay = maMay;
+      this.tenMay = tenMay;
+      this.tenHangSanXuat = tenHangSanXuat;
+      this.giaBan = giaBan;
+    }
+
+    // ... (các phương thức getter và setter)
+    getMaMay() {
+      return this.maMay;
+    }
+
+    setMaMay(maMay) {
+      this.maMay = maMay;
+    }
+
+    getTenMay() {
+      return this.tenMay;
+    }
+
+    setTenMay(tenMay) {
+      this.tenMay = tenMay;
+    }
+
+    getTenHangSanXuat() {
+      return this.tenHangSanXuat;
+    }
+
+    setTenHangSanXuat(tenHangSanXuat) {
+      this.tenHangSanXuat = tenHangSanXuat;
+    }
+
+    getGiaBan() {
+      return this.giaBan;
+    }
+
+    setGiaBan(giaBan) {
+      this.giaBan = giaBan;
+    }
+
+    // Phương thức toString()
+    toString() {
+      return `Máy: ${this.maMay}, Tên: ${this.tenMay}, Hãng sản xuất: ${this.tenHangSanXuat}, Giá bán: ${this.giaBan}`;
+    }
+  }
+
+  class QuanLyMayTinh {
+    constructor() {
+      this.dsMayTinh = [];
+    }
+
+    // ... (phương thức thêm mới máy tính và hiển thị danh sách máy tính)
+    themMayTinh(mayTinh) {
+      this.dsMayTinh.push(mayTinh);
+    }
+
+    // Hiển thị danh sách máy tính dưới dạng bảng HTML
+    hienThiBangDanhSachMayTinh() {
+      document.write("<table style='border-collapse: collapse' border='1'>");
+      document.write("<tr><th>STT</th><th>Mã máy</th><th>Tên máy</th><th>Hãng sản xuất</th><th>Giá bán</th></tr>");
+
+      this.dsMayTinh.forEach((mayTinh, index) => {
+        document.write(`<tr><td>${index + 1}</td><td>${mayTinh.getMaMay()}</td><td>${mayTinh.getTenMay()}</td><td>${mayTinh.getTenHangSanXuat()}</td><td>${mayTinh.getGiaBan()}</td></tr>`);
+      });
+
+      document.write("</table>");
+    }
+  }
+
+  // Tạo đối tượng QuanLyMayTinh
+  let quanLyMayTinh = new QuanLyMayTinh();
+
+  // Thêm mới các máy tính
+  let mayTinh1 = new MayTinh("PC001", "Máy tính xách tay", "HP", 15000000);
+  let mayTinh2 = new MayTinh("PC002", "Máy tính để bàn", "Dell", 12000000);
+
+  quanLyMayTinh.themMayTinh(mayTinh1);
+  quanLyMayTinh.themMayTinh(mayTinh2);
+
+  // Hiển thị danh sách máy tính dưới dạng bảng HTML
+quanLyMayTinh.hienThiBangDanhSachMayTinh()
+</script>
+</body>
+</html>

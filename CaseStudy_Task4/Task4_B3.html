@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function commonCharacterCount(s1,s2) {
+    let commonCount = 0;
+    for (let i = 0; i < s1.length; i++) {
+      let c = s1[i];
+      let index = s2.indexOf(c);
+      if (index !== -1) {
+        commonCount++;
+        s2 = s2.slice(0, index) + "" + s2.slice(index + 1);
+      }
+    }
+    return commonCount;
+  }
+    let n = prompt("Nhap ki tu thu nhat");
+    let n2 = prompt("Nhap ki tu thu hai");
+    let result=commonCharacterCount(n,n2);
+    document.write(result);
+
+</script>
+</body>
+</html>
